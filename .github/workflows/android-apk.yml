@@ -30,6 +30,8 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools platforms;android-35 build-tools;35.0.0
 
       - name: Install dependencies
         run: npm ci
@@ -54,22 +56,29 @@ jobs:
           if-no-files-found: error
 
       - name: Prepare release asset
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           mkdir -p dist-apk
-          cp android/app/build/outputs/apk/debug/app-debug.apk dist-apk/PulseFit-${{ github.ref_name }}.apk
+          VERSION="${GITHUB_REF_NAME}"
+          if [ "${{ github.ref_type }}" != "tag" ]; then
+            VERSION="latest"
+          fi
+          cp android/app/build/outputs/apk/debug/app-debug.apk "dist-apk/PulseFit-${VERSION}.apk"
+          echo "APK_VERSION=${VERSION}" >> "$GITHUB_ENV"
 
-      - name: Create GitHub Release
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          files: dist-apk/PulseFit-${{ github.ref_name }}.apk
-          generate_release_notes: true
+          tag_name: ${{ github.ref_type == 'tag' && github.ref_name || 'latest' }}
+          name: ${{ github.ref_type == 'tag' && format('PulseFit {0}', github.ref_name) || 'PulseFit (latest APK)' }}
+          files: dist-apk/PulseFit-${{ env.APK_VERSION }}.apk
+          generate_release_notes: ${{ github.ref_type == 'tag' }}
+          make_latest: true
+          overwrite_files: true
           body: |
-            ## PulseFit APK (debug, sideload)
+            ## PulseFit APK (sideload)
 
-            1. Télécharge `PulseFit-*.apk`
-            2. Sur Android : autorise l'installation depuis des sources inconnues
+            1. Télécharge `PulseFit-*.apk` ci-dessous
+            2. Sur Android : autorise l'installation depuis le navigateur / sources inconnues
             3. Ouvre le fichier APK et installe
 
             Pas besoin de compte Play Store.
