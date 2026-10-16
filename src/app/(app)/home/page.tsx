@@ -376,7 +376,7 @@ export default function HomePage() {
             href="/ai"
             icon={<IconChat size={20} />}
             title="Coach IA"
-            sub="DeepSeek"
+            sub="Coach local"
           />
           <QuickLink
             href="/profile"

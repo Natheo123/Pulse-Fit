@@ -16,7 +16,7 @@ const free = [
 const premium = [
   "Stats avancées & thèmes étendus",
   "Programmes personnalisés étendus",
-  "Assistant IA (quota)",
+  "Coach avancé & stats pro",
   "Nutrition : menus & listes",
   "Sync multi-appareils prioritaire",
 ];

@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import { AnimateIn } from "@/components/gsap/AnimateIn";
 import { IconChat } from "@/components/icons/Icons";
 import { Button } from "@/components/ui/Button";
+import { localCoachReply } from "@/lib/coach";
 import { useAppStore } from "@/lib/store/useAppStore";
 
 type Msg = { role: "user" | "assistant"; text: string };
@@ -18,70 +19,33 @@ export default function AiPage() {
   const user = useAppStore((s) => s.user);
   const sessions = useAppStore((s) => s.sessions);
   const recommendations = useAppStore((s) => s.recommendations);
-  const [online] = useState(
-    typeof navigator === "undefined" ? true : navigator.onLine
-  );
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([
     {
       role: "assistant",
-      text: "Salut ! Je suis le coach PulseFit (DeepSeek). Pose une question sur ta séance, un exercice ou ta progression.",
+      text: "Salut ! Je suis le coach PulseFit — 100 % local, sans cloud. Pose une question sur ta séance, un exercice ou ta progression.",
     },
   ]);
 
-  async function ask(question: string) {
-    if (!question.trim() || loading || !online) return;
+  function ask(question: string) {
+    if (!question.trim() || loading) return;
 
-    const nextMessages: Msg[] = [
-      ...messages,
-      { role: "user", text: question },
-    ];
-    setMessages(nextMessages);
+    setMessages((m) => [...m, { role: "user", text: question }]);
     setLoading(true);
 
-    try {
-      const completed = sessions.filter((s) => s.status === "completed").length;
-      const lastRec = recommendations[0];
-      const res = await fetch("/api/ai/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: nextMessages.map((m) => ({
-            role: m.role,
-            content: m.text,
-          })),
-          context: {
-            name: user?.name,
-            level: user?.level,
-            goals: user?.goals,
-            completedSessions: completed,
-            lastRecommendation: lastRec
-              ? `${lastRec.explanation} (${lastRec.action} → ${lastRec.suggestedWeight} kg)`
-              : undefined,
-          },
-        }),
+    // Petit délai pour le feeling “réponse”
+    window.setTimeout(() => {
+      const text = localCoachReply(question, {
+        name: user?.name,
+        level: user?.level,
+        goals: user?.goals,
+        sessions,
+        recommendations,
       });
-
-      const data = await res.json();
-      const text =
-        typeof data.text === "string"
-          ? data.text
-          : data.error ||
-            "Le coach n’a pas répondu. Réessaie dans un instant.";
-
       setMessages((m) => [...m, { role: "assistant", text }]);
-    } catch {
-      setMessages((m) => [
-        ...m,
-        {
-          role: "assistant",
-          text: "Connexion au coach impossible pour le moment. Vérifie ta connexion.",
-        },
-      ]);
-    } finally {
       setLoading(false);
-    }
+    }, 280);
   }
 
   function onSubmit(e: FormEvent) {
@@ -89,7 +53,7 @@ export default function AiPage() {
     const q = input.trim();
     if (!q) return;
     setInput("");
-    void ask(q);
+    ask(q);
   }
 
   return (
@@ -99,17 +63,11 @@ export default function AiPage() {
           <IconChat size={24} />
         </div>
         <p className="pf-eyebrow mt-4">Coach</p>
-        <h1 className="pf-title mt-1.5 text-3xl">Assistant IA</h1>
+        <h1 className="pf-title mt-1.5 text-3xl">Coach PulseFit</h1>
         <p className="mt-2 text-sm text-muted">
-          Propulsé par DeepSeek · coaching musculation & nutrition
+          Conseils locaux · musculation & récupération · marche hors ligne
         </p>
       </AnimateIn>
-
-      {!online ? (
-        <p className="mt-4 rounded-2xl bg-danger/15 px-4 py-3 text-sm text-danger">
-          Hors ligne — l&apos;assistant est indisponible.
-        </p>
-      ) : null}
 
       <div className="mt-5 flex-1 space-y-3 overflow-y-auto">
         {messages.map((m, i) => (
@@ -126,7 +84,7 @@ export default function AiPage() {
         ))}
         {loading ? (
           <div className="mr-4 animate-pulse rounded-2xl bg-surface px-4 py-3 text-sm text-muted">
-            DeepSeek réfléchit…
+            Le coach réfléchit…
           </div>
         ) : null}
       </div>
@@ -136,8 +94,8 @@ export default function AiPage() {
           <button
             key={s}
             type="button"
-            disabled={!online || loading}
-            onClick={() => void ask(s)}
+            disabled={loading}
+            onClick={() => ask(s)}
             className="shrink-0 rounded-full bg-surface px-3 py-2 text-xs disabled:opacity-40"
           >
             {s}
@@ -149,7 +107,7 @@ export default function AiPage() {
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          disabled={!online || loading}
+          disabled={loading}
           placeholder="Pose ta question…"
           className="flex-1 rounded-2xl border border-border bg-surface px-4 py-3 outline-none focus:border-accent disabled:opacity-40"
         />
@@ -157,7 +115,7 @@ export default function AiPage() {
           type="submit"
           variant="accent"
           className="w-auto px-4"
-          disabled={!online || loading}
+          disabled={loading}
         >
           Envoyer
         </Button>

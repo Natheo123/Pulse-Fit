@@ -249,7 +249,7 @@ function ProfileContent() {
             />
             <LinkRow href="/nutrition" title="Coach nutrition" icon={<IconLeaf />} />
             <LinkRow href="/premium" title="Offre Premium" />
-            <LinkRow href="/ai" title="Assistant IA" />
+            <LinkRow href="/ai" title="Coach PulseFit" />
             <LinkRow href="/onboarding?edit=1" title="Refaire le questionnaire" />
           </AnimateIn>
 

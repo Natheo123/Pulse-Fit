@@ -1,6 +1,6 @@
 # PulseFit
 
-Application Next.js de musculation pour débutants et confirmés : programmes personnalisés, suivi de séances hors ligne, progression explicable, stats, nutrition et assistant IA (Premium).
+Application Next.js de musculation pour débutants et confirmés : programmes personnalisés, suivi de séances hors ligne, progression explicable, stats, nutrition et coach local.
 
 ## Stack
 
@@ -25,7 +25,7 @@ Ouvre [http://localhost:3000](http://localhost:3000).
 3. **Séance** → logger séries, RIR, chronomètre de repos, pause / reprise
 4. **Stats** → volume, PR, recommandations de charge explicables
 5. **Profil** → thème clair/sombre, couleur d’accent, sync simulée
-6. **Premium** → activer la démo pour l’assistant IA
+6. **Coach** → conseils locaux (hors ligne, sans API cloud)
 
 ## Architecture V1 → suite
 
@@ -34,7 +34,7 @@ Ouvre [http://localhost:3000](http://localhost:3000).
 | Auth | Locale (démo) | Supabase Auth |
 | Données | Zustand + localStorage | SQLite/IndexedDB + sync serveur |
 | Progression | Règles déterministes offline | Affinage + historique des décisions |
-| IA / Premium | Simulation locale | API serveur + Stripe/RevenueCat |
+| Coach / Premium | Coach local (règles) | Stripe/RevenueCat (option) |
 | Mobile natif | PWA + APK Capacitor (GitHub Releases) | Play Store (licence) |
 
 Design par défaut : fond noir, accent lime `#B5FF33`, couleurs d’accent modifiables dans le profil.
@@ -45,14 +45,10 @@ Design par défaut : fond noir, accent lime `#B5FF33`, couleurs d’accent modif
 2. URL : `https://github.com/Natheo123/Pulse-Fit` · branche `main`
 3. **Build Pack** : `Dockerfile` (pas Nixpacks)
 4. **Ports Exposes** : `3000`
-5. **Environment Variables** (Runtime) :
-   - `DEEPSEEK_API_KEY` = ta clé
-   - `DEEPSEEK_MODEL` = `deepseek-chat` (optionnel)
-   - `HOSTNAME` = `0.0.0.0` (déjà dans le Dockerfile)
-6. Domaine : ajoute ton domaine / sous-domaine Coolify → SSL auto
-7. **Deploy**
+5. Domaine : ajoute ton domaine / sous-domaine Coolify → SSL auto
+6. **Deploy**
 
-L’app web (API IA incluse) tourne en mode `standalone` Docker. L’APK Capacitor reste un build séparé (Actions).
+Aucune clé IA à configurer (coach 100 % local). L’APK Capacitor reste un build séparé (Actions).
 
 ## APK Android (sans Play Store)
 
