@@ -1,0 +1,312 @@
+@import "tailwindcss";
+
+:root {
+  --pf-bg: #050506;
+  --pf-bg-elevated: #0c0c0e;
+  --pf-surface: #141416;
+  --pf-surface-2: #1e1e22;
+  --pf-border: rgba(255, 255, 255, 0.08);
+  --pf-text: #f5f5f4;
+  --pf-text-muted: #8b8b93;
+  --pf-accent: #b5ff33;
+  --pf-accent-soft: color-mix(in srgb, var(--pf-accent) 16%, transparent);
+  --pf-accent-contrast: #0a0a0a;
+  --pf-success: #34d399;
+  --pf-warning: #fbbf24;
+  --pf-danger: #fb7185;
+  --pf-glow: color-mix(in srgb, var(--pf-accent) 28%, transparent);
+  --pf-radius: 1.5rem;
+  --pf-radius-sm: 1rem;
+  --pf-font-display: var(--font-syne), system-ui, sans-serif;
+  --pf-font-body: var(--font-outfit), system-ui, sans-serif;
+  --pf-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+[data-theme="light"] {
+  --pf-bg: #f3f3f1;
+  --pf-bg-elevated: #ffffff;
+  --pf-surface: #ffffff;
+  --pf-surface-2: #ecece8;
+  --pf-border: rgba(0, 0, 0, 0.08);
+  --pf-text: #111113;
+  --pf-text-muted: #6b6b73;
+  --pf-accent-contrast: #0a0a0a;
+  --pf-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--pf-bg);
+  --color-foreground: var(--pf-text);
+  --color-surface: var(--pf-surface);
+  --color-surface-2: var(--pf-surface-2);
+  --color-muted: var(--pf-text-muted);
+  --color-accent: var(--pf-accent);
+  --color-accent-contrast: var(--pf-accent-contrast);
+  --color-border: var(--pf-border);
+  --color-success: var(--pf-success);
+  --color-warning: var(--pf-warning);
+  --color-danger: var(--pf-danger);
+  --font-sans: var(--pf-font-body);
+  --font-display: var(--pf-font-display);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #020203;
+  color: var(--pf-text);
+  font-family: var(--pf-font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--pf-font-display);
+  letter-spacing: -0.03em;
+}
+
+::selection {
+  background: var(--pf-accent);
+  color: var(--pf-accent-contrast);
+}
+
+/* Shell app — plein écran mobile / PWA, cadre desktop en preview */
+.pf-app,
+.pf-phone {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100dvh;
+  min-height: 100svh;
+  margin: 0 auto;
+  position: relative;
+  background: var(--pf-bg);
+  overflow-x: hidden;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+@media (min-width: 768px) {
+  .pf-app:not(.pf-standalone) {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    min-height: min(100dvh, 920px);
+    overflow: hidden;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--pf-shadow);
+  }
+}
+
+/* Installée / plein écran → vraie app, pas de cadre */
+@media (display-mode: standalone), (display-mode: fullscreen) {
+  .pf-app {
+    max-width: 100%;
+    margin: 0;
+    min-height: 100dvh;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}
+
+.pf-phone::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.pf-glow {
+  background:
+    radial-gradient(ellipse 100% 55% at 50% -12%, var(--pf-glow), transparent 62%),
+    radial-gradient(ellipse 55% 40% at 110% 20%, color-mix(in srgb, var(--pf-accent) 10%, transparent), transparent 70%),
+    radial-gradient(ellipse 40% 30% at -10% 60%, color-mix(in srgb, var(--pf-accent) 6%, transparent), transparent 70%),
+    var(--pf-bg);
+}
+
+.pf-safe-bottom {
+  padding-bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+.pf-mesh {
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -5%, color-mix(in srgb, var(--pf-accent) 22%, transparent), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 10%, color-mix(in srgb, var(--pf-accent) 12%, transparent), transparent 60%),
+    linear-gradient(180deg, color-mix(in srgb, var(--pf-surface) 50%, transparent), transparent 32%);
+}
+
+.pf-card {
+  background: linear-gradient(
+    160deg,
+    color-mix(in srgb, var(--pf-surface) 100%, white 5%) 0%,
+    var(--pf-surface) 50%,
+    color-mix(in srgb, var(--pf-surface) 92%, black) 100%
+  );
+  border: 1px solid var(--pf-border);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+.pf-card-accent {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--pf-accent) 26%, transparent),
+    var(--pf-surface) 48%,
+    var(--pf-bg-elevated)
+  );
+  border: 1px solid color-mix(in srgb, var(--pf-accent) 35%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--pf-accent) 20%, transparent) inset,
+    0 20px 50px color-mix(in srgb, var(--pf-accent) 8%, transparent);
+}
+
+.pf-glass {
+  background: color-mix(in srgb, var(--pf-surface) 72%, transparent);
+  border: 1px solid var(--pf-border);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+}
+
+.pf-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--pf-accent);
+}
+
+.pf-title {
+  font-family: var(--pf-font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.pf-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.pf-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 38%,
+    color-mix(in srgb, white 14%, transparent) 50%,
+    transparent 62%
+  );
+  transform: translateX(-130%);
+  animation: pf-shimmer 5s ease-in-out infinite;
+}
+
+@keyframes pf-shimmer {
+  0%,
+  50% {
+    transform: translateX(-130%);
+  }
+  72%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.6s ease-in-out infinite;
+}
+
+@keyframes pf-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: pf-float 3.4s ease-in-out infinite;
+}
+
+@keyframes pf-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+}
+
+.animate-breathe {
+  animation: pf-breathe 4s ease-in-out infinite;
+}
+
+@keyframes pf-demo-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.035);
+  }
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  caret-color: var(--pf-accent);
+}
+
+.font-700 {
+  font-weight: 700;
+}
+
+.font-800 {
+  font-weight: 800;
+}
+
+/* Scrollbar discret */
+.pf-phone::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}

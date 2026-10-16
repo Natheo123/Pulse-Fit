@@ -1,0 +1,42 @@
+{
+  "name": "pulsefit",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:mobile": "node scripts/mobile-build.mjs",
+    "cap:sync": "npm run build:mobile && npx cap sync android",
+    "cap:open": "npx cap open android",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/app": "^7.1.0",
+    "@capacitor/core": "^7.4.3",
+    "@capacitor/splash-screen": "^7.0.3",
+    "@capacitor/status-bar": "^7.0.3",
+    "gsap": "^3.15.0",
+    "next": "16.4.0",
+    "react": "19.3.0",
+    "react-body-highlighter": "^2.0.5",
+    "react-dom": "19.3.0",
+    "uuid": "^14.0.3",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.4.3",
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/uuid": "^10.0.0",
+    "cross-env": "^10.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.0",
+    "sharp": "^0.34.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

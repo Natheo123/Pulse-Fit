@@ -1,0 +1,179 @@
+{
+  "picks": {
+    "bench-press": [
+      "https://www.lyfta.app/exercise/bench-press-7",
+      "https://www.lyfta.app/exercise/incline-bench-press-8x",
+      "https://www.lyfta.app/exercise/dumbbell-bench-press-84",
+      "https://www.lyfta.app/exercise/dumbbell-incline-bench-press-6i6",
+      "https://www.lyfta.app/exercise/incline-bench-press-p",
+      "https://www.lyfta.app/exercise/close-grip-bench-press-0",
+      "https://www.lyfta.app/exercise/smith-incline-bench-press-1a",
+      "https://www.lyfta.app/exercise/decline-bench-press-3"
+    ],
+    "dumbbell-press": [
+      "https://www.lyfta.app/exercise/dumbbell-bench-press-84",
+      "https://www.lyfta.app/exercise/dumbbell-bench-press-6hh",
+      "https://www.lyfta.app/exercise/dumbbell-bench-press--7u7"
+    ],
+    "squat": [
+      "https://www.lyfta.app/exercise/full-squat-n",
+      "https://www.lyfta.app/exercise/smith-squat-21",
+      "https://www.lyfta.app/exercise/single-leg-split-squat-9d",
+      "https://www.lyfta.app/exercise/bench-squat-8g",
+      "https://www.lyfta.app/exercise/sled-hack-squat-1r",
+      "https://www.lyfta.app/exercise/bulgarian-split-squat-8tg",
+      "https://www.lyfta.app/exercise/squat-3k",
+      "https://www.lyfta.app/exercise/squat-9e"
+    ],
+    "goblet-squat": [
+      "https://www.lyfta.app/exercise/goblet-squat-ge",
+      "https://www.lyfta.app/exercise/kettlebell-goblet-squat-6o0",
+      "https://www.lyfta.app/exercise/dumbbell-goblet-squat--7ux",
+      "https://www.lyfta.app/exercise/kettlebell-goblet-squat--7wz",
+      "https://www.lyfta.app/exercise/kettlebell-goblet-squat-jump--8jb",
+      "https://www.lyfta.app/exercise/kettlebell-goblet-squat-mobility-84o"
+    ],
+    "deadlift": [
+      "https://www.lyfta.app/exercise/deadlift-2",
+      "https://www.lyfta.app/exercise/romanian-deadlift-65",
+      "https://www.lyfta.app/exercise/dumbbell-stiff-leg-deadlift-6lg",
+      "https://www.lyfta.app/exercise/deadlift-8n",
+      "https://www.lyfta.app/exercise/straight-leg-deadlift-6i",
+      "https://www.lyfta.app/exercise/sumo-deadlift-6j",
+      "https://www.lyfta.app/exercise/barbell-sumo-romanian-deadlift-8yx",
+      "https://www.lyfta.app/exercise/trap-bar-deadlift-6vz"
+    ],
+    "rdl": [
+      "https://www.lyfta.app/exercise/romanian-deadlift-65",
+      "https://www.lyfta.app/exercise/romanian-deadlift-fl",
+      "https://www.lyfta.app/exercise/dumbbell-romanian-deadlift--7t1",
+      "https://www.lyfta.app/exercise/barbell-sumo-romanian-deadlift-8yx",
+      "https://www.lyfta.app/exercise/landmine-romanian-deadlift--98a",
+      "https://www.lyfta.app/exercise/barbell-romanian-deadlift-61t",
+      "https://www.lyfta.app/exercise/barbell-romanian-deadlift--7sc",
+      "https://www.lyfta.app/exercise/landmine-romanian-deadlift--92o"
+    ],
+    "lat-pulldown": [
+      "https://www.lyfta.app/exercise/bar-lateral-pulldown-6r",
+      "https://www.lyfta.app/exercise/pulldown-7k",
+      "https://www.lyfta.app/exercise/pulldown-7j",
+      "https://www.lyfta.app/exercise/cable-wide-grip-lat-pulldown--7v7",
+      "https://www.lyfta.app/exercise/lever-front-pulldown-0w",
+      "https://www.lyfta.app/exercise/close-grip-front-lat-pulldown-38",
+      "https://www.lyfta.app/exercise/cable-one-arm-lat-pulldown-75z",
+      "https://www.lyfta.app/exercise/cable-lateral-pulldown-with-v-bar-7e7"
+    ],
+    "pull-up": [
+      "https://www.lyfta.app/exercise/pull-up-1i",
+      "https://www.lyfta.app/exercise/assisted-pull-up-69x",
+      "https://www.lyfta.app/exercise/pull-up-1h",
+      "https://www.lyfta.app/exercise/pull-up-with-bent-knee-between-chairs-8s6",
+      "https://www.lyfta.app/exercise/assisted-pull-up--7bs",
+      "https://www.lyfta.app/exercise/wide-grip-pull-up-f7",
+      "https://www.lyfta.app/exercise/weighted-pull-up-6wt",
+      "https://www.lyfta.app/exercise/hammer-grip-pull-up-on-dip-cage-h1"
+    ],
+    "overhead-press": [
+      "https://www.lyfta.app/exercise/seated-shoulder-press-9b",
+      "https://www.lyfta.app/exercise/lever-seated-shoulder-press-fg",
+      "https://www.lyfta.app/exercise/barbell-standing-military-press--756",
+      "https://www.lyfta.app/exercise/dumbbell-seated-shoulder-press-6kp",
+      "https://www.lyfta.app/exercise/standing-military-press-31",
+      "https://www.lyfta.app/exercise/shoulder-press-7u",
+      "https://www.lyfta.app/exercise/seated-behind-head-military-press-66",
+      "https://www.lyfta.app/exercise/smith-seated-shoulder-press-26"
+    ],
+    "row": [
+      "https://www.lyfta.app/exercise/bent-over-row-9",
+      "https://www.lyfta.app/exercise/one-arm-bent-over-row-8h",
+      "https://www.lyfta.app/exercise/dumbbell-one-arm-bent-over-row-6hk",
+      "https://www.lyfta.app/exercise/bent-over-row-8i",
+      "https://www.lyfta.app/exercise/barbell-bent-over-row-607",
+      "https://www.lyfta.app/exercise/reverse-grip-bent-over-row-6k",
+      "https://www.lyfta.app/exercise/lever-bent-over-row-with-v-bar--8k4",
+      "https://www.lyfta.app/exercise/dumbbell-bent-over-row-6hl"
+    ],
+    "seated-row": [
+      "https://www.lyfta.app/exercise/straight-back-seated-row-7c",
+      "https://www.lyfta.app/exercise/low-seated-row-79",
+      "https://www.lyfta.app/exercise/lever-narrow-grip-seated-row-0e",
+      "https://www.lyfta.app/exercise/lever-seated-row-4s",
+      "https://www.lyfta.app/exercise/reverse-grip-straight-back-seated-high-row-7n",
+      "https://www.lyfta.app/exercise/seated-wide-grip-row-7t",
+      "https://www.lyfta.app/exercise/cable-low-seated-row-64g",
+      "https://www.lyfta.app/exercise/lever-alternating-narrow-grip-seated-row-0r"
+    ],
+    "bicep-curl": [
+      "https://www.lyfta.app/exercise/alternate-biceps-curl-82",
+      "https://www.lyfta.app/exercise/biceps-curl-8j",
+      "https://www.lyfta.app/exercise/biceps-curl-g5",
+      "https://www.lyfta.app/exercise/dumbbell-incline-biceps-curl-6i7",
+      "https://www.lyfta.app/exercise/dumbbell-alternate-biceps-curl-6h3",
+      "https://www.lyfta.app/exercise/seated-bicep-curl-gq",
+      "https://www.lyfta.app/exercise/cable-one-arm-biceps-curl--851",
+      "https://www.lyfta.app/exercise/dumbbell-step-up-single-leg-balance-with-bicep-curl-7fc"
+    ],
+    "tricep-pushdown": [
+      "https://www.lyfta.app/exercise/triceps-pushdown-7e",
+      "https://www.lyfta.app/exercise/cable-standing-one-arm-tricep-pushdown--76g",
+      "https://www.lyfta.app/exercise/cable-pushdown--64a",
+      "https://www.lyfta.app/exercise/triceps-pushdown-fd",
+      "https://www.lyfta.app/exercise/cable-triceps-pushdown--6g5",
+      "https://www.lyfta.app/exercise/one-arm-side-triceps-pushdown-g7",
+      "https://www.lyfta.app/exercise/cable-standing-lat-pushdown--76h",
+      "https://www.lyfta.app/exercise/pushdown-7l"
+    ],
+    "plank": [
+      "https://www.lyfta.app/exercise/front-plank-6m3",
+      "https://www.lyfta.app/exercise/bent-knee-side-plank-635",
+      "https://www.lyfta.app/exercise/front-plank-6m1",
+      "https://www.lyfta.app/exercise/side-plank-6t1",
+      "https://www.lyfta.app/exercise/reverse-plank-6xj",
+      "https://www.lyfta.app/exercise/iron-cross-plank-75t",
+      "https://www.lyfta.app/exercise/push-up-to-side-plank-6rw",
+      "https://www.lyfta.app/exercise/weighted-front-plank-7rj"
+    ],
+    "lunges": [
+      "https://www.lyfta.app/exercise/rear-lunge-9p",
+      "https://www.lyfta.app/exercise/walking-lunge-fm",
+      "https://www.lyfta.app/exercise/dumbbell-walking-lunges-73j",
+      "https://www.lyfta.app/exercise/weighted-stretch-lunge-8wh",
+      "https://www.lyfta.app/exercise/bodyweight-rear-lunge-745",
+      "https://www.lyfta.app/exercise/lunge-97",
+      "https://www.lyfta.app/exercise/dumbbell-lunge-6is",
+      "https://www.lyfta.app/exercise/lunge-6qg"
+    ]
+  },
+  "sample": [
+    "https://www.lyfta.app/exercise/bench-press-7",
+    "https://www.lyfta.app/exercise/triceps-pushdown-7e",
+    "https://www.lyfta.app/exercise/incline-bench-press-8x",
+    "https://www.lyfta.app/exercise/lever-leg-extension-0b",
+    "https://www.lyfta.app/exercise/lateral-raise-96",
+    "https://www.lyfta.app/exercise/full-squat-n",
+    "https://www.lyfta.app/exercise/straight-back-seated-row-7c",
+    "https://www.lyfta.app/exercise/barbell-curl-1",
+    "https://www.lyfta.app/exercise/bent-over-row-9",
+    "https://www.lyfta.app/exercise/one-arm-bent-over-row-8h",
+    "https://www.lyfta.app/exercise/push-up-1j",
+    "https://www.lyfta.app/exercise/bar-lateral-pulldown-6r",
+    "https://www.lyfta.app/exercise/dumbbell-bench-press-84",
+    "https://www.lyfta.app/exercise/hammer-curl-8v",
+    "https://www.lyfta.app/exercise/alternate-biceps-curl-82",
+    "https://www.lyfta.app/exercise/lever-seated-leg-curl-11",
+    "https://www.lyfta.app/exercise/standing-calf-raise-07",
+    "https://www.lyfta.app/exercise/dumbbell-incline-curl--6i9",
+    "https://www.lyfta.app/exercise/lever-seated-fly-18",
+    "https://www.lyfta.app/exercise/cable-standing-fly-6fr",
+    "https://www.lyfta.app/exercise/seated-shoulder-press-9b",
+    "https://www.lyfta.app/exercise/lever-seated-shoulder-press-fg",
+    "https://www.lyfta.app/exercise/biceps-curl-8j",
+    "https://www.lyfta.app/exercise/lever-lying-leg-curl-0c",
+    "https://www.lyfta.app/exercise/crunch-floor-6gc",
+    "https://www.lyfta.app/exercise/pull-up-1i",
+    "https://www.lyfta.app/exercise/deadlift-2",
+    "https://www.lyfta.app/exercise/dip-on-floor-with-chair-8qy",
+    "https://www.lyfta.app/exercise/romanian-deadlift-65",
+    "https://www.lyfta.app/exercise/barbell-lying-triceps-extension-skull-crusher-60e"
+  ]
+}
