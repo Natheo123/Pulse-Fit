@@ -26,6 +26,9 @@
 *.keystore
 *.jks
 
+# bulk exercise demos (download via: node scripts/download-videos.mjs)
+/videos/
+
 # production
 /build
 
