@@ -39,6 +39,21 @@ Ouvre [http://localhost:3000](http://localhost:3000).
 
 Design par défaut : fond noir, accent lime `#B5FF33`, couleurs d’accent modifiables dans le profil.
 
+## Déployer sur Coolify
+
+1. Dans Coolify : **+ New Resource** → **Public Repository**
+2. URL : `https://github.com/Natheo123/Pulse-Fit` · branche `main`
+3. **Build Pack** : `Dockerfile` (pas Nixpacks)
+4. **Ports Exposes** : `3000`
+5. **Environment Variables** (Runtime) :
+   - `DEEPSEEK_API_KEY` = ta clé
+   - `DEEPSEEK_MODEL` = `deepseek-chat` (optionnel)
+   - `HOSTNAME` = `0.0.0.0` (déjà dans le Dockerfile)
+6. Domaine : ajoute ton domaine / sous-domaine Coolify → SSL auto
+7. **Deploy**
+
+L’app web (API IA incluse) tourne en mode `standalone` Docker. L’APK Capacitor reste un build séparé (Actions).
+
 ## APK Android (sans Play Store)
 
 L’APK est généré automatiquement par GitHub Actions (build debug, installable en sideload).
